@@ -5,9 +5,11 @@ const inquirer = require('inquirer');
 const PORT = process.env.PORT || 3001;
 const app = express();
 
+// express middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// mysql connection to login and get the company_db database
 const db = mysql.createConnection(
     {
       host: 'localhost',
